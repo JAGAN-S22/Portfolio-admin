@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jagan Mohan Lingam | Portfolio</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <div id="loading-spinner">
+        <div class="spinner-border text-primary" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top glass-nav">
+        <div class="container">
+            <a class="navbar-brand fw-bold d-flex align-items-center gap-2" href="#home">
+                <span class="logo-badge">J</span>
+                <span class="brand-text">Jagan Mohan</span>
+            </a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav align-items-lg-center gap-lg-2">
+                    <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#certificates">Certificates</a></li>
+                    <li class="nav-item ms-lg-3">
+                        <button id="theme-toggle" class="btn btn-sm btn-outline-secondary rounded-circle p-2" title="Toggle Dark/Light Mode">
+                            <i class="fa-solid fa-moon"></i>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <!-- HOME SECTION -->
+        <section id="home" class="hero-section min-vh-100 d-flex align-items-center position-relative overflow-hidden pt-5">
+            <div class="hero-glow"></div>
+            <div class="container">
+                <div class="row align-items-center gy-5">
+                    <div class="col-lg-7 text-center text-lg-start animate-on-scroll">
+                        <div class="badge bg-primary bg-opacity-10 text-primary px-3 py-2 rounded-pill mb-4 fw-semibold">
+                            <i class="fas fa-sparkles me-2"></i>Welcome to my Portfolio
+                        </div>
+                        <h1 class="display-4 fw-extrabold mb-3 tracking-tight">
+                            Hi, I'm <span class="text-gradient">Jagan Mohan Lingam</span>
+                        </h1>
+                        <h2 class="h3 text-muted mb-4">
+                            I am a <span class="typed-text fw-bold text-primary"></span><span class="cursor">|</span>
+                        </h2>
+                        <p class="lead text-muted mb-5 mx-auto mx-lg-0 col-lg-10">
+                            Passionate and curious Computer Science student committed to continuous learning, problem-solving, and building innovative software solutions.
+                        </p>
+                        <div class="d-flex flex-wrap justify-content-center justify-content-lg-start gap-3 mb-5">
+                            <a href="https://github.com/jagan-s22" target="_blank" class="btn btn-outline-secondary btn-lg px-4 py-3 rounded-pill d-flex align-items-center gap-2">
+                                <i class="fab fa-github"></i> GitHub
+                            </a>
+                            <a href="https://www.linkedin.com/in/jaganmohanlingam/" target="_blank" class="btn btn-outline-secondary btn-lg px-4 py-3 rounded-pill d-flex align-items-center gap-2">
+                                <i class="fab fa-linkedin-in"></i> LinkedIn
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-5 animate-on-scroll">
+                        <div class="developer-card p-4 rounded-4 shadow-lg glass-card position-relative">
+                            <div class="card-glow"></div>
+                            <div class="d-flex align-items-center gap-3 mb-4">
+                                <div class="avatar-placeholder rounded-circle bg-primary bg-opacity-25 text-primary d-flex align-items-center justify-content-center fw-bold fs-3" style="width: 60px; height: 60px;">
+                                    JM
+                                </div>
+                                <div>
+                                    <h4 class="mb-0 fw-bold">Jagan Mohan Lingam</h4>
+                                    <p class="text-muted small mb-0">AI Engineer & Software Developer</p>
+                                </div>
+                            </div>
+                            <div class="code-snippet bg-dark text-light p-3 rounded-3 font-monospace small mb-4 overflow-hidden border border-secondary border-opacity-25">
+                                <span class="text-danger">const</span> <span class="text-info">developer</span> = &#123;<br>
+                                &nbsp;&nbsp;name: <span class="text-success">"Jagan Mohan"</span>,<br>
+                                &nbsp;&nbsp;focus: <span class="text-success">"AI & Software Engineering"</span>,<br>
+                                &nbsp;&nbsp;cgpa: <span class="text-warning">8.84</span>,<br>
+                                &nbsp;&nbsp;status: <span class="text-success">"Ready to Innovate"</span><br>
+                                &#125;;
+                            </div>
+                            <div class="row text-center g-2">
+                                <div class="col-4">
+                                    <div class="p-3 rounded-3 bg-secondary bg-opacity-10">
+                                        <h3 class="fw-bold text-primary mb-0 counter" data-target="8.84">8.84</h3>
+                                        <small class="text-muted">CGPA</small>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="p-3 rounded-3 bg-secondary bg-opacity-10">
+                                        <h3 class="fw-bold text-primary mb-0 counter" data-target="3">3</h3>
+                                        <small class="text-muted">Core Projects</small>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="p-3 rounded-3 bg-secondary bg-opacity-10">
+                                        <h3 class="fw-bold text-primary mb-0 counter" data-target="4">4</h3>
+                                        <small class="text-muted">Languages</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT SECTION -->
+        <section id="about" class="py-5 my-5">
+            <div class="container py-4">
+                <div class="text-center mb-5 animate-on-scroll">
+                    <h2 class="display-5 fw-bold mb-2">About <span class="text-gradient">Me</span></h2>
+                    <p class="text-muted">Get to know more about my background, education, and passions</p>
+                </div>
+
+                <div class="row g-4 mb-5">
+                    <div class="col-lg-6 animate-on-scroll">
+                        <div class="card h-100 border-0 shadow-sm glass-card p-4 rounded-4">
+                            <h3 class="h4 fw-bold mb-3 text-primary"><i class="fas fa-user-graduate me-2"></i>Professional Introduction</h3>
+                            <p class="text-muted lh-lg">
+                                Passionate and curious Computer Science student committed to continuous learning, problem-solving, and building innovative software solutions. Eager to contribute technical skills while growing as a software engineer.
+                            </p>
+                            <h4 class="h5 fw-bold mt-4 mb-3 text-primary"><i class="fas fa-bullseye me-2"></i>Career Objective</h4>
+                            <p class="text-muted lh-lg">
+                                Motivated and detail-oriented Integrated M.Tech Computer Science student at VIT-AP University with a strong foundation in programming, data structures, databases, and software development. Passionate about building scalable software solutions and continuously learning new technologies.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 animate-on-scroll">
+                        <div class="card h-100 border-0 shadow-sm glass-card p-4 rounded-4">
+                            <h3 class="h4 fw-bold mb-3 text-primary"><i class="fas fa-graduation-cap me-2"></i>Education</h3>
+                            <div class="mb-4">
+                                <h5 class="fw-bold mb-1">VIT-AP University, Amaravati</h5>
+                                <p class="text-primary fw-medium mb-1">M.Tech Integrated Computer Science</p>
+                                <p class="text-muted small mb-2"><i class="far fa-calendar-alt me-2"></i>Sept 2023 to Present</p>
+                                <p class="text-muted small">Maintained a strong academic record with a CGPA of <strong>8.84</strong> reflecting consistency, dedication, and a solid understanding of core Computer Science concepts.</p>
+                            </div>
+
+                            <h3 class="h4 fw-bold mb-3 text-primary"><i class="fas fa-id-card me-2"></i>Personal Details</h3>
+                            <ul class="list-unstyled text-muted mb-0">
+                                <li class="mb-2"><strong class="text-light">Nationality:</strong> Indian</li>
+                                <li class="mb-2"><strong class="text-light">Date of Birth:</strong> 25-02-2006</li>
+                                <li class="mb-2"><strong class="text-light">Location:</strong> Puttur, Tirupati 517583, India</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row g-4">
+                    <div class="col-md-6 animate-on-scroll">
+                        <div class="card border-0 shadow-sm glass-card p-4 rounded-4 h-100">
+                            <h3 class="h4 fw-bold mb-3 text-primary"><i class="fas fa-language me-2"></i>Languages Known</h3>
+                            <div class="d-flex flex-wrap gap-2">
+                                <span class="badge bg-primary bg-opacity-10 text-primary px-3 py-2 rounded-pill">Telugu (Native)</span>
+                                <span class="badge bg-primary bg-opacity-10 text-primary px-3 py-2 rounded-pill">English (Professional)</span>
+                                <span class="badge bg-primary bg-opacity-10 text-primary px-3 py-2 rounded-pill">Tamil (Professional)</span>
+                                <span class="badge bg-primary bg-opacity-10 text-primary px-3 py-2 rounded-pill">Hindi (Professional)</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 animate-on-scroll">
+                        <div class="card border-0 shadow-sm glass-card p-4 rounded-4 h-100">
+                            <h3 class="h4 fw-bold mb-3 text-primary"><i class="fas fa-heart me-2"></i>Hobbies & Interests</h3>
+                            <div class="d-flex flex-wrap gap-2">
+                                <span class="badge bg-secondary bg-opacity-10 text-light px-3 py-2 rounded-pill">Playing outdoor sports</span>
+                                <span class="badge bg-secondary bg-opacity-10 text-light px-3 py-2 rounded-pill">Exploring new places</span>
+                                <span class="badge bg-secondary bg-opacity-10 text-light px-3 py-2 rounded-pill">Learning new technologies</span>
+                                <span class="badge bg-secondary bg-opacity-10 text-light px-3 py-2 rounded-pill">Discovering new ideas</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SKILLS SECTION -->
+        <section id="skills" class="py-5 my-5">
+            <div class="container py-4">
+                <div class="text-center mb-5 animate-on-scroll">
+                    <h2 class="display-5 fw-bold mb-2">My <span class="text-gradient">Skills</span></h2>
+                    <p class="text-muted">Technical expertise and core competencies acquired through academics and projects</p>
+                </div>
+
+                <div class="row g-4 mb-5">
+                    <div class="col-lg-6 animate-on-scroll">
+                        <div class="card border-0 shadow-sm glass-card p-4 rounded-4 h-100">
+                            <h3 class="h4 fw-bold mb-4 text-primary"><i class="fas fa-code me-2"></i>Programming Languages</h3>
+                            <div class="mb-3">
+                                <div class="d-flex justify-content-between mb-1"><span class="fw-medium">Java</span><span class="text-muted">90%</span></div>
+                                <div class="progress" style="height: 8px;"><div class="progress-bar bg-primary rounded-pill" role="progressbar" style="width: 90%"></div></div>
+                            </div>
+                            <div class="mb-3">
+                                <div class="d-flex justify-content-between mb-1"><span class="fw-medium">Python</span><span class="text-muted">85%</span></div>
+                                <div class="progress" style="height: 8px;"><div class="progress-bar bg-primary rounded-pill" role="progressbar" style="width: 85%"></div></div>
+                            </div>
+                            <div class="mb-3">
+                                <div class="d-flex justify-content-between mb-1"><span class="fw-medium">SQL</span><span class="text-muted">88%</span></div>
+                                <div class="progress" style="height: 8px;"><div class="progress-bar bg-primary rounded-pill" role="progressbar" style="width: 88%"></div></div>
+                            </div>
+                            <div class="mb-0">
+                                <div class="d-flex justify-content-between mb-1"><span class="fw-medium">JavaScript / HTML5 / CSS3</span><span class="text-muted">80%</span></div>
+                                <div class="progress" style="height: 8px;"><div class="progress-bar bg-primary rounded-pill" role="progressbar" style="width: 80%"></div></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 animate-on-scroll">
+                        <div class="card border-0 shadow-sm glass-card p-4 rounded-4 h-100">
+                            <h3 class="h4 fw-bold mb-4 text-primary"><i class="fas fa-layer-group me-2"></i>Frameworks & Technologies</h3>
+                            <div class="mb-3">
+                                <div class="d-flex justify-content-between mb-1"><span class="fw-medium">Spring Boot</span><span class="text-muted">82%</span></div>
+                                <div class="progress" style="height: 8px;"><div class="progress-bar bg-primary rounded-pill" role="progressbar" style="width: 82%"></div></div>
+                            </div>
+                            <div class="mb-3">
+                                <div class="d-flex justify-content-between mb-1"><span class="fw-medium">REST APIs</span><span class="text-muted">85%</span></div>
+                                <div class="progress" style="height: 8px;"><div class="progress-bar bg-primary rounded-pill" role="progressbar" style="width: 85%"></div></div>
+                            </div>
+                            <div class="mb-3">
+                                <div class="d-flex justify-content-between mb-1"><span class="fw-medium">MySQL</span><span class="text-muted">88%</span></div>
+                                <div class="progress" style="height: 8px;"><div class="progress-bar bg-primary rounded-pill" role="progressbar" style="width: 88%"></div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row g-4">
+                    <div class="col-lg-6 animate-on-scroll">
+                        <div class="card border-0 shadow-sm glass-card p-4 rounded-4 h-100">
+                            <h3 class="h4 fw-bold mb-3 text-primary"><i class="fas fa-book-open me-2"></i>Core Subjects</h3>
+                            <div class="d-flex flex-wrap gap-2">
+                                <span class="badge bg-secondary bg-opacity-10 text-light px-3 py-2 rounded-pill">Data Structures & Algorithms</span>
+                                <span class="badge bg-secondary bg-opacity-10 text-light px-3 py-2 rounded-pill">DBMS</span>
+                                <span class="badge bg-secondary bg-opacity-10 text-light px-3 py-2 rounded-pill">Operating Systems</span>
+                                <span class="badge bg-secondary bg-opacity-10 text-light px-3 py-2 rounded-pill">Computer Networks</span>
+                                <span class="badge bg-secondary bg-opacity-10 text-light px-3 py-2 rounded-pill">Object-Oriented Programming</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 animate-on-scroll">
+                        <div class="card border-0 shadow-sm glass-card p-4 rounded-4 h-100">
+                            <h3 class="h4 fw-bold mb-3 text-primary"><i class="fas fa-tools me-2"></i>Tools & Soft Skills</h3>
+                            <div class="d-flex flex-wrap gap-2 mb-3">
+                                <span class="badge bg-primary bg-opacity-10 text-primary px-3 py-2 rounded-pill">VS Code</span>
+                                <span class="badge bg-primary bg-opacity-10 text-primary px-3 py-2 rounded-pill">IntelliJ IDEA</span>
+                                <span class="badge bg-primary bg-opacity-10 text-primary px-3 py-2 rounded-pill">Eclipse</span>
+                                <span class="badge bg-primary bg-opacity-10 text-primary px-3 py-2 rounded-pill">MySQL Workbench</span>
+                            </div>
+                            <div class="d-flex flex-wrap gap-2">
+                                <span class="badge bg-secondary bg-opacity-10 text-light px-3 py-2 rounded-pill">Problem Solving</span>
+                                <span class="badge bg-secondary bg-opacity-10 text-light px-3 py-2 rounded-pill">Teamwork</span>
+                                <span class="badge bg-secondary bg-opacity-10 text-light px-3 py-2 rounded-pill">Adaptability</span>
+                                <span class="badge bg-secondary bg-opacity-10 text-light px-3 py-2 rounded-pill">Time Management</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROJECTS SECTION -->
+        <section id="projects" class="py-5 my-5">
+            <div class="container py-4">
+                <div class="text-center mb-5 animate-on-scroll">
+                    <h2 class="display-5 fw-bold mb-2">Featured <span class="text-gradient">Projects</span></h2>
+                    <p class="text-muted">Innovative software and systems developed to solve real-world problems</p>
+                </div>
+
+                <div class="row g-4">
+                    <div class="col-lg-4 animate-on-scroll">
+                        <div class="card border-0 shadow-sm glass-card p-4 rounded-4 h-100 d-flex flex-column justify-content-between project-card">
+                            <div>
+                                <div class="mb-3 text-primary fs-2"><i class="fas fa-lightbulb"></i></div>
+                                <h3 class="h4 fw-bold mb-3">Automated Light Detection System</h3>
+                                <p class="text-muted mb-4">Developed an automated lighting system that detects ambient light intensity and controls lights automatically to improve energy efficiency.</p>
+                            </div>
+                            <div>
+                                <div class="d-flex flex-wrap gap-2 mb-4">
+                                    <span class="badge bg-primary bg-opacity-10 text-primary px-2 py-1 rounded">IoT</span>
+                                    <span class="badge bg-primary bg-opacity-10 text-primary px-2 py-1 rounded">Hardware Sensors</span>
+                                    <span class="badge bg-primary bg-opacity-10 text-primary px-2 py-1 rounded">Automation</span>
+                                </div>
+                                <a href="https://github.com/jagan-s22" target="_blank" class="btn btn-outline-primary w-100 rounded-pill d-flex align-items-center justify-content-center gap-2">
+                                    <i class="fab fa-github"></i> View on GitHub
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 animate-on-scroll">
+                        <div class="card border-0 shadow-sm glass-card p-4 rounded-4 h-100 d-flex flex-column justify-content-between project-card">
+                            <div>
+                                <div class="mb-3 text-primary fs-2"><i class="fas fa-water"></i></div>
+                                <h3 class="h4 fw-bold mb-3">Algae Bloom Detection System</h3>
+                                <p class="text-muted mb-4">Designed a system for early detection and monitoring of algae blooms using environmental data to support timely decision-making.</p>
+                            </div>
+                            <div>
+                                <div class="d-flex flex-wrap gap-2 mb-4">
+                                    <span class="badge bg-primary bg-opacity-10 text-primary px-2 py-1 rounded">Python</span>
+                                    <span class="badge bg-primary bg-opacity-10 text-primary px-2 py-1 rounded">Data Analysis</span>
+                                    <span class="badge bg-primary bg-opacity-10 text-primary px-2 py-1 rounded">Environmental Tech</span>
+                                </div>
+                                <a href="https://github.com/jagan-s22" target="_blank" class="btn btn-outline-primary w-100 rounded-pill d-flex align-items-center justify-content-center gap-2">
+                                    <i class="fab fa-github"></i> View on GitHub
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 animate-on-scroll">
+                        <div class="card border-0 shadow-sm glass-card p-4 rounded-4 h-100 d-flex flex-column justify-content-between project-card">
+                            <div>
+                                <div class="mb-3 text-primary fs-2"><i class="fas fa-heartbeat"></i></div>
+                                <h3 class="h4 fw-bold mb-3">Remote Patient Monitoring System</h3>
+                                <p class="text-muted mb-4">Built a system to remotely monitor patients' vital signs, enabling real-time health tracking and improved healthcare accessibility.</p>
+                            </div>
+                            <div>
+                                <div class="d-flex flex-wrap gap-2 mb-4">
+                                    <span class="badge bg-primary bg-opacity-10 text-primary px-2 py-1 rounded">Java</span>
+                                    <span class="badge bg-primary bg-opacity-10 text-primary px-2 py-1 rounded">Spring Boot</span>
+                                    <span class="badge bg-primary bg-opacity-10 text-primary px-2 py-1 rounded">REST APIs</span>
+                                </div>
+                                <a href="https://github.com/jagan-s22" target="_blank" class="btn btn-outline-primary w-100 rounded-pill d-flex align-items-center justify-content-center gap-2">
+                                    <i class="fab fa-github"></i> View on GitHub
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CERTIFICATES SECTION -->
+        <section id="certificates" class="py-5 my-5">
+            <div class="container py-4">
+                <div class="text-center mb-5 animate-on-scroll">
+                    <h2 class="display-5 fw-bold mb-2">Certificates & <span class="text-gradient">Achievements</span></h2>
+                    <p class="text-muted">Continuous learning and professional accreditations</p>
+                </div>
+
+                <div class="row g-4">
+                    <div class="col-md-4 animate-on-scroll">
+                        <div class="card border-0 shadow-sm glass-card p-4 rounded-4 h-100 text-center">
+                            <div class="mb-3 text-primary fs-1"><i class="fas fa-award"></i></div>
+                            <h3 class="h5 fw-bold mb-2">Academic Consistency</h3>
+                            <p class="text-muted small mb-3">Maintained a strong CGPA of 8.84 at VIT-AP University.</p>
+                            <span class="badge bg-primary bg-opacity-10 text-primary px-3 py-2 rounded-pill">VIT-AP University</span>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 animate-on-scroll">
+                        <div class="card border-0 shadow-sm glass-card p-4 rounded-4 h-100 text-center">
+                            <div class="mb-3 text-primary fs-1"><i class="fas fa-certificate"></i></div>
+                            <h3 class="h5 fw-bold mb-2">Software Engineering</h3>
+                            <p class="text-muted small mb-3">Hands-on experience in building scalable software and algorithmic problem solving.</p>
+                            <span class="badge bg-primary bg-opacity-10 text-primary px-3 py-2 rounded-pill">Self-Directed</span>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 animate-on-scroll">
+                        <div class="card border-0 shadow-sm glass-card p-4 rounded-4 h-100 text-center">
+                            <div class="mb-3 text-primary fs-1"><i class="fas fa-graduation-cap"></i></div>
+                            <h3 class="h5 fw-bold mb-2">Continuous Learner</h3>
+                            <p class="text-muted small mb-3">Actively exploring new technologies, programming languages, and frameworks.</p>
+                            <span class="badge bg-primary bg-opacity-10 text-primary px-3 py-2 rounded-pill">Ongoing</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer-section py-5 mt-5 border-top border-secondary border-opacity-25">
+        <div class="container">
+            <div class="row gy-4 align-items-center">
+                <div class="col-md-6 text-center text-md-start">
+                    <h5 class="fw-bold text-gradient mb-2">Jagan Mohan Lingam</h5>
+                    <p class="text-muted small mb-0">Passionate Computer Science student and AI Engineer building innovative solutions.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <div class="social-links mb-3">
+                        <a href="https://github.com/jagan-s22" target="_blank" class="btn btn-outline-light btn-sm rounded-circle me-2" title="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/jaganmohanlingam/" target="_blank" class="btn btn-outline-light btn-sm rounded-circle me-2" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="mailto:lingamjagan12@gmail.com" class="btn btn-outline-light btn-sm rounded-circle" title="Email"><i class="fas fa-envelope"></i></a>
+                    </div>
+                    <p class="text-muted small mb-0">&copy; 2026 Jagan Mohan Lingam. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <button id="back-to-top" class="btn btn-primary rounded-circle shadow" title="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
