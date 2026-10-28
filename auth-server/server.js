@@ -11,9 +11,15 @@ const rateLimit = require("express-rate-limit");
 const { authenticator } = require("otplib");
 const QRCode = require("qrcode");
 const path = require("path");
+const fs = require("fs");
 
 const app = express();
-const dataDir = path.join(__dirname, "data");
+// Render sits behind a trusted reverse proxy; required for HTTPS cookies.
+app.set("trust proxy", 1);
+
+// Render persistent disk should be mounted at /var/data and DATA_DIR set to it.
+const dataDir = process.env.DATA_DIR || path.join(__dirname, "data");
+fs.mkdirSync(dataDir, { recursive: true });
 const publicDir = path.join(__dirname, "public");
 
 const {
@@ -104,6 +110,24 @@ app.use(session({
   store: new SQLiteStore({ db: "sessions.db", dir: dataDir }),
   cookie: { httpOnly: true, sameSite: "strict", secure: NODE_ENV === "production", maxAge: 30 * 60 * 1000 }
 }));
+
+// Allow the GitHub Pages homepage to read only the public projects endpoint.
+// Admin login and dashboard remain on this Render origin, so session cookies
+// are first-party and do not depend on cross-site cookies.
+const githubPagesOrigin = (process.env.GITHUB_PAGES_ORIGIN || "https://jagan-s22.github.io").replace(/\/$/, "");
+app.use("/api/projects", (req, res, next) => {
+  const origin = req.get("Origin");
+  if (origin === githubPagesOrigin) {
+    res.setHeader("Access-Control-Allow-Origin", githubPagesOrigin);
+    res.setHeader("Vary", "Origin");
+    res.setHeader("Access-Control-Allow-Methods", "GET, OPTIONS");
+    res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+    if (req.method === "OPTIONS") return res.sendStatus(204);
+  } else if (req.method === "OPTIONS") {
+    return res.sendStatus(403);
+  }
+  next();
+});
 
 app.use("/api", (req, res, next) => {
   if (["POST", "PUT", "PATCH", "DELETE"].includes(req.method)) {
@@ -386,6 +410,6 @@ app.use((err, req, res, next) => {
   res.status(500).json({ error: "Internal server error" });
 });
 
-app.listen(PORT, "127.0.0.1", () => {
-  console.log(`Portfolio server listening on http://127.0.0.1:${PORT}`);
+app.listen(PORT, "0.0.0.0", () => {
+  console.log(`Portfolio server listening on port ${PORT}`);
 });
