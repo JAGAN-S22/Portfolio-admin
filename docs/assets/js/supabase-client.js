@@ -7,7 +7,7 @@ export const SUPABASE_PUBLISHABLE_KEY = "sb_publishable_gfv6_ITHlXipmDQV_Y8Wpg_G
 
 export const isSupabaseConfigured =
   /^https:\/\/.+\.supabase\.co$/.test(SUPABASE_URL) &&
-  SUPABASE_PUBLISHABLE_KEY !== "sb_publishable_gfv6_ITHlXipmDQV_Y8Wpg_GjQK_U86" &&
+  SUPABASE_PUBLISHABLE_KEY.startsWith("sb_publishable_") &&
   SUPABASE_PUBLISHABLE_KEY.trim().length > 20;
 
 export const supabase = createClient(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY, {
