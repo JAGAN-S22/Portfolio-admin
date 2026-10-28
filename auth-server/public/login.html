@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Admin Login | Jagan Mohan Lingam</title>
+  <style>
+    *{box-sizing:border-box}body{margin:0;min-height:100vh;display:grid;place-items:center;padding:24px;background:#0f172a;color:#f8fafc;font-family:Inter,Arial,sans-serif}
+    main{width:min(420px,100%);padding:30px;background:rgba(30,41,59,.88);border:1px solid rgba(255,255,255,.12);border-radius:20px;box-shadow:0 25px 70px rgba(0,0,0,.28)}
+    a{color:#a5b4fc}label{display:block;margin:14px 0 6px}input,button{width:100%;padding:12px 14px;border-radius:10px;font:inherit}input{background:#0f172a;color:#f8fafc;border:1px solid #475569}button{margin-top:16px;border:0;background:#818cf8;color:#111827;font-weight:700;cursor:pointer}button:disabled{opacity:.6;cursor:wait}img{display:block;max-width:220px;width:100%;margin:18px auto;background:white;padding:8px;border-radius:8px}small,.muted{color:#cbd5e1}#message{min-height:1.4em;overflow-wrap:anywhere} [hidden]{display:none!important}
+  </style>
+</head>
+<body>
+  <main>
+    <p><a href="/">← Back to portfolio</a></p>
+    <h1>Admin Login</h1>
+    <p class="muted">Sign in to manage your portfolio.</p>
+    <form id="loginForm">
+      <label for="email">Admin email</label>
+      <input id="email" type="email" autocomplete="username" required>
+      <label for="password">Password</label>
+      <input id="password" type="password" autocomplete="current-password" required>
+      <button type="submit">Continue</button>
+    </form>
+    <section id="mfaSection" hidden>
+      <h2 id="mfaTitle">Two-factor authentication</h2>
+      <p id="mfaHelp" class="muted"></p>
+      <img id="qr" alt="Authenticator enrollment QR code" hidden>
+      <form id="mfaForm">
+        <label for="token">Six-digit authenticator code</label>
+        <input id="token" inputmode="numeric" pattern="[0-9]{6}" maxlength="6" autocomplete="one-time-code" required>
+        <button id="verifyButton" type="submit">Verify code</button>
+      </form>
+    </section>
+    <p id="message" role="status" aria-live="polite"></p>
+  </main>
+  <script src="/js/auth.js" defer></script>
+</body>
+</html>

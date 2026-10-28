@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Portfolio Control Center | Jagan Mohan Lingam</title>
+  <style>
+    :root{color-scheme:dark;--bg:#0b1020;--panel:#151c30;--panel2:#0f172a;--line:#303a52;--text:#f5f7ff;--muted:#aeb9ce;--accent:#a5b4fc;--danger:#fda4af;--green:#86efac}
+    *{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at top left,#20264d 0,transparent 32%),var(--bg);color:var(--text);font:16px Inter,system-ui,Segoe UI,Arial,sans-serif;min-height:100vh}
+    a{color:var(--accent)}.wrap{max-width:1120px;margin:auto;padding:28px 18px 56px}.topbar{display:flex;gap:16px;align-items:center;justify-content:space-between;flex-wrap:wrap;margin-bottom:26px}.brand{display:flex;align-items:center;gap:12px}.logo{width:44px;height:44px;display:grid;place-items:center;border-radius:13px;background:linear-gradient(135deg,#6366f1,#c084fc);font-weight:900;font-size:1.2rem}.eyebrow{margin:0;color:var(--accent);font-size:.78rem;text-transform:uppercase;letter-spacing:.15em;font-weight:800}.brand h1{margin:3px 0 0;font-size:1.35rem}.actions{display:flex;gap:10px;flex-wrap:wrap}.btn{border:1px solid var(--line);background:#202943;color:var(--text);padding:10px 14px;border-radius:10px;font-weight:700;text-decoration:none;cursor:pointer}.btn.primary{background:var(--accent);color:#111827;border-color:var(--accent)}.btn.danger{color:var(--danger)}.btn:disabled{opacity:.55;cursor:wait}.intro{margin:22px 0 18px}.intro h2{font-size:clamp(1.7rem,4vw,2.5rem);margin:0 0 8px}.muted{color:var(--muted)}.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:22px 0}.stat,.panel{background:rgba(21,28,48,.92);border:1px solid var(--line);border-radius:18px;padding:20px}.stat span{display:block;color:var(--muted);font-size:.9rem}.stat strong{display:block;font-size:1.8rem;margin-top:8px}.statusline{margin:10px 0 0;color:var(--muted);font-size:.9rem}.grid{display:grid;grid-template-columns:minmax(280px,.85fr) minmax(0,1.15fr);gap:16px;align-items:start}.panel h3{margin:0 0 8px;font-size:1.2rem}.form-row{margin:15px 0}.form-row label{display:block;margin-bottom:7px;font-weight:700;font-size:.9rem}.form-row input,.form-row textarea{width:100%;padding:12px;border-radius:10px;border:1px solid var(--line);background:var(--panel2);color:var(--text);font:inherit}.form-row textarea{min-height:115px;resize:vertical}.hint{font-size:.83rem;color:var(--muted);margin:6px 0 0}.form-actions{display:flex;gap:9px;flex-wrap:wrap}.notice{min-height:24px;margin:12px 0 0;color:var(--green);overflow-wrap:anywhere}.notice.error{color:var(--danger)}.project-list{display:grid;gap:12px;margin-top:16px}.project{border:1px solid var(--line);border-radius:14px;padding:15px;background:rgba(10,15,30,.4)}.project h4{margin:0 0 8px;font-size:1.05rem}.project p{color:var(--muted);margin:0 0 10px;white-space:pre-wrap;overflow-wrap:anywhere}.tags{display:flex;gap:6px;flex-wrap:wrap;margin:10px 0}.tag{font-size:.76rem;border:1px solid #454f70;background:#232d49;color:#c7d2fe;border-radius:999px;padding:4px 8px}.project-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.empty{padding:24px;border:1px dashed var(--line);border-radius:12px;text-align:center;color:var(--muted)}.foot{margin-top:20px;color:var(--muted);font-size:.84rem}.mfa-on{color:var(--green)}[hidden]{display:none!important}
+    @media(max-width:760px){.grid{grid-template-columns:1fr}.stats{grid-template-columns:1fr}.wrap{padding-top:18px}.topbar{align-items:flex-start}}
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <header class="topbar">
+      <div class="brand"><div class="logo">JM</div><div><p class="eyebrow">Private area</p><h1>Portfolio Control Center</h1></div></div>
+      <div class="actions"><a class="btn" href="/" rel="noopener">View live portfolio ↗</a><button class="btn" id="logout" type="button">Log out</button></div>
+    </header>
+    <p id="status" class="muted" role="status">Checking your secure session…</p>
+    <section id="dashboard" hidden>
+      <div class="intro"><h2>Manage your work, Jagan.</h2><p class="muted">Add, edit, and remove projects. Saved projects appear automatically in the public portfolio, so this login has a practical purpose beyond security.</p></div>
+      <div class="stats">
+        <div class="stat"><span>Featured projects on portfolio</span><strong id="featuredCount">—</strong><p class="statusline">Includes your original three projects.</p></div>
+        <div class="stat"><span>Projects managed here</span><strong id="managedCount">—</strong><p class="statusline">Stored persistently in your local database.</p></div>
+        <div class="stat"><span>Multi-factor authentication</span><strong class="mfa-on" id="mfaStatus">—</strong><p class="statusline">Password + authenticator code.</p></div>
+      </div>
+      <div class="grid">
+        <section class="panel" aria-labelledby="formHeading">
+          <h3 id="formHeading">Add a project</h3>
+          <p class="muted">Showcase a new project on the public site.</p>
+          <form id="projectForm">
+            <input type="hidden" id="projectId">
+            <div class="form-row"><label for="title">Project title *</label><input id="title" maxlength="100" required placeholder="e.g. ResQ Vision"></div>
+            <div class="form-row"><label for="description">Description *</label><textarea id="description" maxlength="1200" required placeholder="What it does, how it works, and the problem it solves"></textarea></div>
+            <div class="form-row"><label for="tags">Technologies</label><input id="tags" maxlength="300" placeholder="Python, AI, Flask"><p class="hint">Separate tags with commas.</p></div>
+            <div class="form-row"><label for="githubUrl">GitHub URL</label><input id="githubUrl" type="url" placeholder="https://github.com/yourname/project"></div>
+            <div class="form-row"><label for="demoUrl">Live demo URL</label><input id="demoUrl" type="url" placeholder="https://example.com"></div>
+            <div class="form-actions"><button class="btn primary" id="saveProject" type="submit">Publish project</button><button class="btn" id="cancelEdit" type="button" hidden>Cancel edit</button></div>
+            <p id="formMessage" class="notice" role="status" aria-live="polite"></p>
+          </form>
+        </section>
+        <section class="panel" aria-labelledby="listHeading">
+          <h3 id="listHeading">Your managed projects</h3>
+          <p class="muted">Changes are saved in SQLite and appear on your homepage.</p>
+          <div id="projectList" class="project-list" aria-live="polite"><div class="empty">Loading projects…</div></div>
+        </section>
+      </div>
+      <p class="foot">Your original three featured projects remain unchanged. This dashboard manages additional projects that you add here.</p>
+    </section>
+  </main>
+  <script src="/js/admin.js" defer></script>
+</body>
+</html>
