@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow"><title>Portfolio Admin | Jagan Mohan Lingam</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <header class="glass-nav py-3 border-bottom border-secondary border-opacity-25"><div class="container d-flex align-items-center justify-content-between gap-3"><a href="index.html" class="navbar-brand fw-bold text-decoration-none"><span class="logo-badge d-inline-flex me-2">J</span> Portfolio Admin</a><div><span id="admin-email" class="small text-muted me-3"></span><button id="logout-button" class="btn btn-outline-secondary btn-sm rounded-pill">Log out</button></div></div></header>
+  <main class="admin-shell"><div class="container"><div class="mb-4"><p class="text-primary fw-semibold mb-2"><i class="fa-solid fa-shield-halved me-2"></i>MFA verified</p><h1 class="display-6 fw-bold">Manage projects</h1><p class="text-muted">Add, edit, publish, or remove projects displayed in the public portfolio. Database policies enforce MFA for changes.</p></div>
+    <div class="row g-4"><div class="col-lg-5"><section class="admin-panel"><h2 id="form-title" class="h4 fw-bold mb-3">Add a project</h2><form id="project-form"><label for="title" class="form-label">Project title</label><input id="title" class="form-control" maxlength="100" required><label for="description" class="form-label mt-3">Description</label><textarea id="description" class="form-control" rows="4" maxlength="1500" required></textarea><label for="technologies" class="form-label mt-3">Technology tags (comma-separated)</label><input id="technologies" class="form-control" placeholder="Python, Deep Learning, OpenCV"><label for="github-url" class="form-label mt-3">GitHub URL (optional)</label><input id="github-url" type="url" class="form-control" placeholder="https://github.com/..."><label for="demo-url" class="form-label mt-3">Live demo URL (optional)</label><input id="demo-url" type="url" class="form-control" placeholder="https://..."><div class="form-check mt-3"><input id="published" class="form-check-input" type="checkbox" checked><label for="published" class="form-check-label">Publish on portfolio</label></div><div class="d-flex gap-2 mt-4"><button id="save-button" class="btn btn-primary rounded-pill" type="submit">Save project</button><button id="cancel-edit" class="btn btn-outline-secondary rounded-pill" type="button" hidden>Cancel edit</button></div></form><p id="admin-status" class="small mt-3 mb-0" role="status" aria-live="polite"></p></section></div>
+    <div class="col-lg-7"><section class="admin-panel"><div class="d-flex align-items-center justify-content-between mb-3"><h2 class="h4 fw-bold mb-0">Your projects</h2><button id="refresh-projects" class="btn btn-outline-secondary btn-sm rounded-pill"><i class="fa-solid fa-rotate me-1"></i>Refresh</button></div><div id="project-list" class="d-grid gap-3"><p class="text-muted">Loading projects…</p></div></section></div></div>
+  </div></main>
+  <script type="module" src="assets/js/supabase-admin.js"></script>
+</body></html>
